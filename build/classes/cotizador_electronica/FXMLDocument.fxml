@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cotizador_electronica.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <SplitPane dividerPositions="0.2904238618524333" layoutX="1.0" orientation="VERTICAL" prefHeight="639.0" prefWidth="511.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="413.0" layoutY="14.0" text="FOLIO:" />
+                  <Label layoutX="35.0" layoutY="39.0" text="Nombre del cliente:" />
+                  <Label layoutX="35.0" layoutY="95.0" text="Buscar Producto:" />
+                  <TextField fx:id="txtBucador" layoutX="132.0" layoutY="91.0" />
+                  <Button fx:id="btnBuscar" layoutX="294.0" layoutY="91.0" mnemonicParsing="false" onAction="#loadDataFromDatabase" text="Buscar" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="tbProductos" prefHeight="449.0" prefWidth="509.0">
+                    <columns>
+                      <TableColumn fx:id="colCodProduct" prefWidth="145.0" text="CODIGO PRODUCTO" />
+                      <TableColumn fx:id="colDescripcion" prefWidth="128.0" text="DESCRIPCION" />
+                        <TableColumn fx:id="colPrecio" prefWidth="66.0" text="PRECIO" />
+                        <TableColumn fx:id="colCantidad" prefWidth="81.0" text="CANTIDAD" />
+                        <TableColumn fx:id="colTotal" prefWidth="88.0" text="TOTAL" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>

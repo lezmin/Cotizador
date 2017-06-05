@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="295.0" prefWidth="308.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="cotizador_electronica.RegistroClientesController">
+   <children>
+      <Label layoutX="41.0" layoutY="60.0" text="Nombre :" />
+      <Label layoutX="41.0" layoutY="102.0" text="Direccion" />
+      <Label layoutX="41.0" layoutY="143.0" text="Telefono" />
+      <Label layoutX="41.0" layoutY="178.0" text="E-mail:" />
+      <TextField layoutX="118.0" layoutY="56.0" />
+      <TextField layoutX="118.0" layoutY="98.0" />
+      <TextField layoutX="118.0" layoutY="139.0" />
+      <TextField layoutX="118.0" layoutY="183.0" />
+      <Button layoutX="161.0" layoutY="236.0" mnemonicParsing="false" text="Registrar" />
+      <Label layoutX="88.0" layoutY="14.0" text="REGISTRO CLIENTES" />
+   </children>
+</AnchorPane>

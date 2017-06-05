@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="216.0" prefWidth="405.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="cotizador_electronica.AutenticacionController">
+   <children>
+      <TextField layoutX="165.0" layoutY="66.0" />
+      <TextField layoutX="165.0" layoutY="110.0" />
+      <Button layoutX="207.0" layoutY="158.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="86.0" text="Entrar" />
+      <Label layoutX="60.0" layoutY="70.0" prefHeight="25.0" prefWidth="59.0" text="Usuario" />
+      <Label layoutX="60.0" layoutY="114.0" text="Contraseña" />
+      <Label layoutX="171.0" layoutY="21.0" text="INICIO" />
+   </children>
+</AnchorPane>
