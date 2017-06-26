@@ -15,21 +15,31 @@ import javafx.css.SimpleStyleableFloatProperty;
  * @author leslijazmin
  */
 public class Productos {
-    public SimpleStringProperty codProducto = new SimpleStringProperty();
+    public SimpleStringProperty codigo = new SimpleStringProperty();
     public SimpleStringProperty descripcion = new SimpleStringProperty();
     public SimpleFloatProperty precio = new SimpleFloatProperty();
     public SimpleIntegerProperty cantidad = new SimpleIntegerProperty();
     public SimpleFloatProperty total = new SimpleFloatProperty();
+    public SimpleFloatProperty tot = new SimpleFloatProperty();
     
-    public Productos(String codProducto,String descripcion,Float precio){
-        this.codProducto = new SimpleStringProperty(codProducto);
+    public Productos(String codigo,String descripcion,Float precio,Integer cantidad,Float total){
+        this.codigo = new SimpleStringProperty(codigo);
         this.descripcion = new SimpleStringProperty(descripcion);
         this.precio = new SimpleFloatProperty(precio);
+        this.cantidad = new SimpleIntegerProperty(cantidad);
+        this.total = new SimpleFloatProperty(total);
     
     }
+
+    public Productos(String codigo,String descripcion) {
+        this.codigo = new SimpleStringProperty(codigo);
+        this.descripcion = new SimpleStringProperty(descripcion);
+    }
+    
+    
     
     public String getcodProducto(){
-        return codProducto.get();
+        return codigo.get();
     }
     
     public String getDescripcion(){
@@ -45,12 +55,19 @@ public class Productos {
     }
     
     public Float getTotal(){
-        return precio.get();
+        return total.get();
     }
+    
+   
     
     @Override
     public String toString(){
-    
-        return this.getcodProducto() + this.getDescripcion();
+        return   this.getCantidad()+"  "+ this.getDescripcion() + " "+ this.getTotal()+ " \n";
     }
+    
+    
+      
+    
 }
+
+
