@@ -22,8 +22,8 @@ public class Productos {
     public SimpleFloatProperty total = new SimpleFloatProperty();
     public SimpleFloatProperty tot = new SimpleFloatProperty();
     
-    public Productos(String codigo,String descripcion,Float precio,Integer cantidad,Float total){
-        this.codigo = new SimpleStringProperty(codigo);
+    public Productos(String descripcion,Float precio,Integer cantidad,Float total){
+       
         this.descripcion = new SimpleStringProperty(descripcion);
         this.precio = new SimpleFloatProperty(precio);
         this.cantidad = new SimpleIntegerProperty(cantidad);
@@ -36,7 +36,10 @@ public class Productos {
         this.descripcion = new SimpleStringProperty(descripcion);
     }
     
-    
+   
+
+    public Productos() {
+    }
     
     public String getcodProducto(){
         return codigo.get();
@@ -46,25 +49,41 @@ public class Productos {
         return descripcion.get();
     }
     
-    public Float getPrecio(){
-        return precio.get();
+     void setDescripcion(String descripcion) {
+        this.descripcion.set(descripcion);
+    }
+    
+    
+    public String getPrecio(){
+        return "$" + precio.get();
+    }
+    
+    void setPrecio(float precio){
+        this.precio.set(precio);
     }
     
     public Integer getCantidad(){
         return cantidad.get();
     }
     
-    public Float getTotal(){
-        return total.get();
+    void setCantidad(int cantidad){
+    
+        this.cantidad.set(cantidad);
     }
+    
+    public String getTotal(){
+        return "$" + total.get();
+    }
+    
     
    
     
     @Override
     public String toString(){
-        return   this.getCantidad()+"  "+ this.getDescripcion() + " "+ this.getTotal()+ " \n";
+        return   this.getCantidad()+"  "+ this.getDescripcion() + " "+ "$"+ this.getTotal()+ " \n";
     }
-    
+
+   
     
       
     

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="356.0" style="-fx-border-color: Blue; -fx-border-insets: 10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cotizador_electronica.ConfirmBoxController">
+   <children>
+      <TextField fx:id="des" layoutX="138.0" layoutY="36.0" />
+      <TextField fx:id="can" layoutX="138.0" layoutY="86.0" />
+      <TextField fx:id="prec" layoutX="138.0" layoutY="128.0" />
+      <Button layoutX="137.0" layoutY="186.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
+      <Button layoutX="213.0" layoutY="186.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Label layoutX="72.0" layoutY="40.0" text="Descripcion:" />
+      <Label layoutX="72.0" layoutY="90.0" text="Cantidad:" />
+      <Label layoutX="72.0" layoutY="132.0" text="Precio:" />
+   </children>
+</AnchorPane>

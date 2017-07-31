@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,59 +9,77 @@
 
 <AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cotizador_electronica.FXMLDocumentController">
     <children>
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <SplitPane dividerPositions="0.34222919937205654" layoutX="1.0" orientation="VERTICAL" prefHeight="639.0" prefWidth="762.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="760.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="215.0" prefWidth="663.0" style="-fx-border-color: blue; -fx-border-insets: 10;">
                <children>
-                  <Label layoutX="147.0" layoutY="90.0" text="Buscar Producto:" />
-                  <TextField fx:id="txtBuscador" layoutX="245.0" layoutY="86.0" onKeyPressed="#tabEnter" prefHeight="25.0" prefWidth="201.0" />
-                  <TextField fx:id="txtEdCantidad" layoutX="245.0" layoutY="124.0" onKeyPressed="#tabBtn" prefHeight="25.0" prefWidth="51.0" text="1" />
-                  <Label layoutX="174.0" layoutY="128.0" text="CANTIDAD:" />
-                  <Button fx:id="btnBuscar" layoutX="346.0" layoutY="124.0" mnemonicParsing="false" onAction="#buscarEnBD" text="COTIZAR" />
+                  <Label layoutX="284.0" layoutY="80.0" text="Buscar Producto:" />
+                  <TextField fx:id="txtBuscador" layoutX="382.0" layoutY="76.0" onKeyPressed="#tabEnter" prefHeight="25.0" prefWidth="201.0" />
+                  <TextField fx:id="txtEdCantidad" layoutX="382.0" layoutY="114.0" onKeyPressed="#tabBtn" prefHeight="25.0" prefWidth="51.0" text="1" />
+                  <Label layoutX="311.0" layoutY="118.0" text="CANTIDAD:" />
+                  <Button fx:id="btnBuscar" layoutX="483.0" layoutY="114.0" mnemonicParsing="false" onAction="#buscarEnBD" text="COTIZAR" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="24.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="573.0" layoutY="114.0" mnemonicParsing="false" onAction="#agregarProducto" text="PRODUCTO COMUN" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="760.0">
                <children>
-                  <TableView fx:id="tbProductos" layoutX="-1.0" layoutY="-2.0" prefHeight="450.0" prefWidth="762.0">
-                    <columns>
-                      <TableColumn fx:id="colDescripcion" prefWidth="424.0" text="DESCRIPCION" />
-                        <TableColumn fx:id="colPrecio" prefWidth="118.0" text="PRECIO" />
-                        <TableColumn fx:id="colCantidad" prefWidth="106.0" text="CANTIDAD" />
-                        <TableColumn fx:id="colTotal" prefWidth="111.0" text="TOTAL" />
-                    </columns>
-                  </TableView>
+                  <ScrollPane prefHeight="416.0" prefWidth="762.0">
+                     <content>
+                        <TableView fx:id="tbProductos" prefHeight="414.0" prefWidth="759.0">
+                          <columns>
+                            <TableColumn fx:id="colDescripcion" prefWidth="424.0" text="DESCRIPCION" />
+                              <TableColumn fx:id="colPrecio" prefWidth="118.0" text="PRECIO" />
+                              <TableColumn fx:id="colCantidad" prefWidth="106.0" text="CANTIDAD" />
+                              <TableColumn fx:id="colTotal" prefWidth="112.0" text="TOTAL" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
-      <ScrollPane layoutX="777.0" layoutY="397.0" prefHeight="150.0" prefWidth="337.0">
-         <content>
-            <TextArea fx:id="txtAreaListar" prefHeight="143.0" prefWidth="337.0" text="hola&#10;" />
-         </content>
-      </ScrollPane>
-      <Button fx:id="btnMostrarLista" layoutX="799.0" layoutY="560.0" mnemonicParsing="false" onAction="#listarProductos" text="Mostrar Lista" />
-      <Button layoutX="893.0" layoutY="560.0" mnemonicParsing="false" onAction="#copiarProductos" prefHeight="25.0" prefWidth="61.0" text="COPIAR" />
-      <Button layoutX="962.0" layoutY="560.0" mnemonicParsing="false" onAction="#exportarExcel" text="EXPORTAR" />
-      <Button layoutX="1039.0" layoutY="560.0" mnemonicParsing="false" text="IMPORTAR" />
-      <Label layoutX="777.0" layoutY="53.0" text="Nombre del cliente:" />
-      <TextField layoutX="889.0" layoutY="49.0" prefHeight="25.0" prefWidth="201.0" />
-      <TextField fx:id="txtColonia" layoutX="822.0" layoutY="97.0" prefHeight="25.0" prefWidth="105.0" />
-      <TextField fx:id="txtCalle" layoutX="970.0" layoutY="97.0" prefHeight="25.0" prefWidth="89.0" />
-      <TextField fx:id="txtNumero" layoutX="1092.0" layoutY="97.0" prefHeight="25.0" prefWidth="51.0" />
-      <Label layoutX="777.0" layoutY="101.0" text="Colonia:" />
-      <Label layoutX="941.0" layoutY="101.0" text="Calle:" />
-      <Label layoutX="1067.0" layoutY="101.0" text="No:" />
-      <Label layoutX="779.0" layoutY="146.0" text="Ciudad:" />
-      <Label layoutX="936.0" layoutY="149.0" text="Estado:" />
-      <Label layoutX="1096.0" layoutY="146.0" text="CP:" />
-      <TextField fx:id="txtCiudad" layoutX="822.0" layoutY="142.0" prefHeight="25.0" prefWidth="96.0" />
-      <TextField fx:id="txtEstado" layoutX="975.0" layoutY="142.0" prefHeight="25.0" prefWidth="105.0" />
-      <TextField fx:id="txtCP" layoutX="1118.0" layoutY="142.0" prefHeight="25.0" prefWidth="74.0" />
-      <TextField fx:id="txtTelefono" layoutX="829.0" layoutY="194.0" />
-      <TextField fx:id="txtEmail" layoutX="1030.0" layoutY="194.0" />
-      <Label layoutX="777.0" layoutY="198.0" text="Telefono:" />
-      <Label layoutX="990.0" layoutY="198.0" text="Correo:" />
-    <AnchorPane layoutX="918.0" layoutY="319.0" minHeight="0.0" minWidth="0.0" prefHeight="67.0" prefWidth="112.0" />
+      <Button fx:id="btnCopiar" layoutX="893.0" layoutY="560.0" mnemonicParsing="false" onAction="#copiarProductos" prefHeight="25.0" prefWidth="61.0" text="COPIAR" />
+      <Button fx:id="btnExportar" layoutX="962.0" layoutY="560.0" mnemonicParsing="false" onAction="#pruebaImg" text="EXPORTAR A EXCEL" />
+      <Label layoutX="777.0" layoutY="196.0" text="Nombre del cliente*:" textFill="#e43535" />
+      <TextField fx:id="txtNomCliente" layoutX="889.0" layoutY="192.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="txtCalle" layoutX="816.0" layoutY="280.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="txtRFC" layoutX="799.0" layoutY="229.0" prefHeight="25.0" prefWidth="182.0" />
+      <Label layoutX="778.0" layoutY="284.0" text="Calle:" />
+      <Label layoutX="773.0" layoutY="233.0" prefHeight="17.0" prefWidth="29.0" text="RFC:" />
+      <Label layoutX="777.0" layoutY="332.0" text="Ciudad:" />
+      <Label layoutX="982.0" layoutY="335.0" text="Estado:" />
+      <Label layoutX="1018.0" layoutY="233.0" text="CP*:" textFill="#e43535" />
+      <TextField fx:id="txtCiudad" layoutX="820.0" layoutY="328.0" prefHeight="25.0" prefWidth="96.0" />
+      <TextField fx:id="txtEstado" layoutX="1021.0" layoutY="331.0" prefHeight="25.0" prefWidth="105.0" />
+      <TextField fx:id="txtCP" layoutX="1040.0" layoutY="229.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="txtTelefono" layoutX="820.0" layoutY="388.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="txtEmail" layoutX="989.0" layoutY="388.0" prefHeight="25.0" prefWidth="140.0" />
+      <Label layoutX="768.0" layoutY="392.0" text="Telefono*:" textFill="#ee2b2b" />
+      <Label layoutX="952.0" layoutY="392.0" text="EMAIL:" />
+      <Label layoutX="774.0" layoutY="155.0" prefHeight="17.0" prefWidth="388.0" text="----------------------------DATOS DEL CLIENTE-----------------------------" />
+      <Label layoutX="774.0" layoutY="61.0" text="COTIZACION REALIZADA POR*:" textFill="#e43535" />
+      <TextField fx:id="txtCotizador" layoutX="942.0" layoutY="57.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextArea fx:id="txtAreaListar" disable="true" layoutX="799.0" layoutY="510.0" prefHeight="44.0" prefWidth="69.0" visible="false" />
+      <Label layoutX="927.0" layoutY="284.0" text="Colonia:" />
+      <TextField fx:id="txtColonia" layoutX="979.0" layoutY="280.0" />
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <MenuBar layoutX="763.0" prefHeight="25.0" prefWidth="399.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#nuevaVentada" text="Nuevo" />
+              <MenuItem mnemonicParsing="false" onAction="#pruebaImg" text="Exportar" />
+                  <MenuItem mnemonicParsing="false" onAction="#copiarProductos" text="Copiar" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="796.0" layoutY="560.0" mnemonicParsing="false" onAction="#borrar" text="Eliminar" />
     </children>
 </AnchorPane>

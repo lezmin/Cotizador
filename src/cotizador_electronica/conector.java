@@ -5,13 +5,12 @@
  */
 package cotizador_electronica;
 
-import com.mysql.jdbc.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import org.jboss.logging.Logger;
+
 
 /**
  *
